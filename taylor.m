@@ -9,3 +9,13 @@ for i=0:n
 end
 disp("El modelo generado es: ");
 disp(sumatoria);
+ezplot(f);
+hold on 
+ezplot(sumatoria);
+legend(char(f), char(sumatoria));
+equis=input("Digite el valor de x: ");
+valor_teorico=double(subs(f, equis));
+valor_experimental=double(subs(sumatoria, equis));
+error_absoluto=abs(valor_teorico-valor_experimental)
+error_relativo=...
+abs((valor_teorico-valor_experimental)/valor_teorico)*100
